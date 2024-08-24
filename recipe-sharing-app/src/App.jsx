@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import RecipeDetails from './components/RecipeDetails.jsx';
 import RecipeList from './components/RecipeList.jsx';
+import SearchBar from "./components/SearchBar.jsx";
 
 // import EditRecipeForm from "./components/EditRecipeForm";
 const App = () => {
@@ -12,6 +13,7 @@ const App = () => {
             <div className="app-container">
             <h1 className="app-title">My Recipe App</h1>
             <AddRecipeForm />
+            <SearchBar />
             <Outlet />
             <Routes>
                 <Route index element={<RecipeList />} />
