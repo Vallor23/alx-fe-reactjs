@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import useRecipeStore from "./RecipeStore";
 
 const RecipeList = () => {
-    const recipes = useRecipeStore(state => state.recipes);
+    // const recipes = useRecipeStore(state => state.recipes);
     const filteredRecipes = useRecipeStore(state => state.filteredRecipes);
     // console.log("Current recipes:", recipes);
 
