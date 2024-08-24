@@ -1,17 +1,24 @@
-// import RecipeList from "./components/RecipeList";
 import AddRecipeForm from "./components/AddRecipeForm";
 import { Outlet } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+import RecipeDetails from './components/RecipeDetails.jsx';
+import RecipeList from './components/RecipeList.jsx';
 
 // import EditRecipeForm from "./components/EditRecipeForm";
 const App = () => {
     return (
-        <div className="app-container">
+        <Router>
+            <div className="app-container">
             <h1 className="app-title">My Recipe App</h1>
-            
             <AddRecipeForm />
-            {/* <EditRecipeForm /> */}
             <Outlet />
+            <Routes>
+                <Route index element={<RecipeList />} />
+                <Route path='recipes/:recipeId' element={<RecipeDetails />}></Route>
+            </Routes>
         </div>
+        </Router>
     );
 };
 
