@@ -31,8 +31,8 @@ const EditRecipeForm = () => {
     }, [recipe]);
 
     // Handle form submission
-    const handleSubmit = (e) => {
-        e.preventDefault(); // Prevent the default form submission behavior
+    const handleSubmit = (event) => {
+        event.preventDefault(); // Prevent the default form submission behavior
         updateRecipe({ id: recipe.id, title, description });// Call updateRecipe to update the recipe with the new title and description
         navigate(`/`); // Navigate back to the index path ("/") after updating the recipe
     };
