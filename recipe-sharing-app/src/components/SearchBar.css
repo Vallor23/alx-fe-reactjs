@@ -1,0 +1,35 @@
+.search-bar {
+    display: flex; 
+    align-items: centre; 
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    padding: 5px 10px;
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    flex: 1;
+    padding: 10px;
+    border-radius: 25px;
+}
+
+.search-input::placeholder {
+    color: #aaa;
+}
+.search-icon {
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+}
+
+.search-bar:hover {
+    border-color: #888;
+}
+
+.search-icon:hover {
+    color: #007bff;
+}
