@@ -2,8 +2,30 @@ import {create} from 'zustand';
 
  const useRecipeStore = create(set => ({
     recipes: [
-        { id: 1, title: 'Pancakes', description: 'Delicious pancakes.' },
-        { id: 2, title: 'Omelette', description: 'Fluffy omelette.' }
+        {
+            id: 1,
+            title: 'Spaghetti Carbonara',
+            cuisine: 'Italian',
+            difficulty: 'Intermediate',
+            cookingTime: 30, // in minutes
+            description: 'A classic Roman pasta dish made with eggs, cheese, pancetta, and pepper. It’s creamy, comforting, and quick to make.',
+          },
+          {
+            id: 2,
+            title: 'Chicken Tikka Masala',
+            cuisine: 'Indian',
+            difficulty: 'Advanced',
+            cookingTime: 45, // in minutes
+            description: 'Tender chicken pieces marinated in spices and yogurt, then cooked in a creamy tomato-based sauce. A popular dish in Indian cuisine.',
+          },
+          {
+            id: 3,
+            title: 'Sushi Rolls',
+            cuisine: 'Japanese',
+            difficulty: 'Advanced',
+            cookingTime: 60, // in minutes
+            description: 'Traditional Japanese dish featuring vinegared rice, raw or cooked fish, and vegetables, all rolled in seaweed (nori).',
+          },
     ],
 
     addRecipe:(newRecipe) =>set((state) => ({ 
@@ -22,16 +44,15 @@ import {create} from 'zustand';
         ({recipes: state.recipes.filter((recipe) => recipe.id !== recipeId)})),
     
     
-    searchTerm: '',// State to store the current search term
-    // Action to set the search term
-    setSearchTerm: (term) => set({searchTerm: term}),//Update the search term in the state
-    filteredRecipes: [],
-    //Filter the recipes based on the search term
+    searchTerm: '',//Initialize thw search term as an empty string
+    
+    setSearchTerm: (term) => set({searchTerm: term}),// Action to set/update the search term
+    filteredRecipes: [],//initialize the filtered recipes as an empty array
     filterRecipes: () => set(state => ({
         filteredRecipes: state.recipes.filter(recipe =>
-            recipe.title.toLowerCase.includes(state.searchTerm.toLowerCase())
+            recipe.title.toLowerCase().includes(state.searchTerm.toLowerCase())
         )
-    })),
+    })),//Action to filter the recipes based on the search term
 }));
 
 export default useRecipeStore;
