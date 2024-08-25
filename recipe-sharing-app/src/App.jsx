@@ -12,8 +12,8 @@ const App = () => {
         <Router>
             <div className="app-container">
             <h1 className="app-title">My Recipe App</h1>
-            <AddRecipeForm />
             <SearchBar />
+            <AddRecipeForm />
             <Outlet />
             <Routes>
                 <Route index element={<RecipeList />} />
