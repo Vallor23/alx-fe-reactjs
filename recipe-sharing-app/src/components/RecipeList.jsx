@@ -1,19 +1,14 @@
 //RecipeList component
 import { Link } from "react-router-dom";
-import useRecipeStore from "./RecipeStore";
+import useRecipeStore from "./recipeStore";
 
 const RecipeList = () => {
     // const recipes = useRecipeStore(state => state.recipes);
     const filteredRecipes = useRecipeStore(state => state.filteredRecipes);
-    // console.log("Current recipes:", recipes);
-
-    // const activeStyle = ({isActive}) => {
-    //     return{
-    //         backgroundColor : isActive ? "rgb(200 52 18)" : "",
-    //         color : isActive ? "rgb(255 247 237)" : "",
-    //     }
-    // }
-    console.log('filtered recipes:', filteredRecipes)
+    const searchTerm = useRecipeStore(state => state.searchTerm);
+    // console.log("Current recipes:", recipes);//debug
+    console.log('filtered recipes:', filteredRecipes)//debug
+    console.log(searchTerm);//debug
 
     return (
         <div className="recipe-list">
