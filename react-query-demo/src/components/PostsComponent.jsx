@@ -10,7 +10,14 @@ const PostsComponent = () => {
     const queryClient = useQueryClient();//Initialize query client
 
     //useQuery hook to handle data fetching,loading states, error handling, and data caching.
-    const {data, isError, isLoading} = useQuery('fetchData', fetchPosts);
+    const {data, isError, isLoading,isFetching} = useQuery({
+        queryKey: ['fetchData'],
+        queryFn: fetchPosts,
+        staleTime: 6000,
+        cacheTime: 30000,
+        refetchOnWindowFocus: false,//disable refetching on window focus
+        keepPreviousData: true//keep previous data while new data is being fetched
+    });
 
     // Use useMutation to handle manual refetching of data
     const mutation = useMutation({
@@ -31,17 +38,17 @@ const PostsComponent = () => {
         const handleRefetch = () => {
             mutation.mutate();
         }
-
+        console.log(data)//debug
     //Render the fetched data
     return (
         <div>
             <ul>
                 {data.map(item => (
-                    <div key={item.id}>{item.name}</div>
+                    <div key={item.id}>{item.title}</div>
                 ))}
             </ul>
             <button onClick={handleRefetch} disabled={mutation.isLoading}>
-                {mutation.isLoading ? 'Refetching...' : 'Refetch Data'}
+                {mutation.isLoading || isFetching ? 'Refetching...' : 'Refetch Data'}
             </button>
         </div>
     );
