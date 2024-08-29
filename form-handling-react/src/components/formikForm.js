@@ -1,6 +1,6 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from 'yup';
-import './RegisterForm.css';
+import './RegistrationForm.css';
 
 const validationSchema = Yup.object({
     username:Yup.string()
