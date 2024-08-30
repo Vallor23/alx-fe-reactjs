@@ -1,4 +1,4 @@
-import { Route, useRouteMatch, Link, Switch} from "react-router-dom";
+import { Routes, Route, useRouteMatch, Link} from "react-router-dom";
 
 function Profile() {
     //UseRouteMatch provides the current URL and path
@@ -15,7 +15,7 @@ function Profile() {
                     <Link to = {`${url}/ProfileSettings`}>ProfileSettings</Link>
                 </li>
               </ul>
-              <Switch>
+              <Routes>
                 <Route exact path={path}>
                     <h3>Please select an option</h3>
                 </Route>
@@ -25,7 +25,7 @@ function Profile() {
                 <Route path={`${path}/ProfileSettings`}>
                     <ProfileSettings />
                 </Route>
-              </Switch>
+              </Routes>
         </div>
   )
 }
