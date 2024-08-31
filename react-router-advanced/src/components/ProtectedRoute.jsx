@@ -1,9 +1,9 @@
-import { Navigate, Routes, Route } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import Profile from './Profile';
-import Home from '../Home';
-import Login from './Login';
+// import Profile from './Profile';
+// import Home from '../Home';
+// import Login from './Login';
 
 // function that checks if user is authenticated
 const useAuth = () => {
@@ -28,19 +28,4 @@ ProtectedRoute.propTypes = {
     element: PropTypes.element.isRequired
 };
 
-const AppRoutes = () => {
-    return (
-        <Routes>
-            {/* Public route to login component */}
-            <Route path="/login" element={<Login />}/>
-            {/* ProtectedRoute to Profile component */}
-            <Route 
-                path="/Profile" 
-                element= {<ProtectedRoute element={<Profile />} />}
-            />
-            {/* Default route to Home component */}
-            <Route path="/" element= {<Home />} />
-        </Routes>
-    )
-}
-export default AppRoutes;
+export default ProtectedRoute;

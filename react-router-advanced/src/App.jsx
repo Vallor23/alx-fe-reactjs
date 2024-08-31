@@ -4,9 +4,9 @@ import { ProfileDetails } from "./components/Profile";
 import { ProfileSettings } from "./components/Profile";
 import BlogPost from "./BlogPost";
 import Home from "./Home";
-// import ProtectedRoute from "./components/ProtectedRoute";
-// import Login from "./components/Login";
-import AppRoutes from "./components/ProtectedRoute";
+import ProtectedRoute from "./components/ProtectedRoute";
+import Login from "./components/Login";
+// import AppRoutes from "./components/ProtectedRoute";
 
 function App () {
     return (
@@ -30,7 +30,17 @@ function App () {
                         <Route path="ProfileSettings" element = { <ProfileSettings />} />
                     </Route>
                 </Routes>
-                <AppRoutes />
+                <Routes>
+            {/* Public route to login component */}
+            <Route path="/login" element={<Login />}/>
+            {/* ProtectedRoute to Profile component */}
+            <Route 
+                path="/profile" 
+                element= {<ProtectedRoute element={<Profile />} />}
+            />
+            {/* Default route to Home component */}
+            <Route path="/" element= {<Home />} />
+        </Routes>
                 
             </div>
         </Router>
