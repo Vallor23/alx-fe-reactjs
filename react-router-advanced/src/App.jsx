@@ -12,12 +12,12 @@ function App () {
                 <h2>Home</h2>
                 <nav>
                     <Link to= "/Profile">Profile</Link>
-                    <Link to= "/Blog/1">Blog Post 1</Link>
-                    <Link to= "/Blog/2">Blog Post 2</Link>
+                    <Link to= "/blog/1">Blog Post 1</Link>
+                    <Link to= "/blog/2">Blog Post 2</Link>
                 </nav>
                 <Routes>
                     <Route path="/" element= {<Home />} />
-                    <Route path="/Blog/:id" element={<BlogPost />} />
+                    <Route path="/blog/:id" element={<BlogPost />} />
         
                     {/* Route to Profile component */}
                     <Route path="/Profile" element={<Profile />}>
