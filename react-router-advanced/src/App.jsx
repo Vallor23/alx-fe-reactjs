@@ -25,10 +25,10 @@ function App () {
                     <Route path="/blog/:id" element={<BlogPost />} />
         
                     {/* Route to Profile component */}
-                    {/* <Route path="/Profile" element={<Profile />}>
+                    <Route path="/Profile" element={<Profile />}>
                         <Route path="ProfileDetails" element= {<ProfileDetails />} />
                         <Route path="ProfileSettings" element = { <ProfileSettings />} />
-                    </Route> */}
+                    </Route>
                 </Routes>
                 <AppRoutes />
                 

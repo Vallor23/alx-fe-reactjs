@@ -24,7 +24,7 @@ const PostsComponent = () => {
         mutationFn: fetchPosts,
         onSuccess: () => {
             // Invalidate and refetch the fetchData query
-            queryClient.invalidateQueries('[fetchData]')
+            queryClient.invalidateQueries('[fetchData]')//Mark queries as stake
         }
     });
     
@@ -47,7 +47,7 @@ const PostsComponent = () => {
                     <div key={item.id}>{item.title}</div>
                 ))}
             </ul>
-            <button onClick={handleRefetch} disabled={mutation.isLoading}>
+            <button onClick={handleRefetch} disabled={mutation.isLoading || isFetching}>
                 {mutation.isLoading || isFetching ? 'Refetching...' : 'Refetch Data'}
             </button>
         </div>
