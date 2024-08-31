@@ -14,7 +14,7 @@ function App () {
             <div>
                 <h2>Home</h2>
                 <nav>
-                    <Link to= "/Profile">Profile</Link>
+                    <Link to= "profile">Profile</Link>
                     <Link to= "/blog/1">Blog Post 1</Link>
                     <Link to= "/blog/2">Blog Post 2</Link>
                     <Link to= "/Login">Login</Link>
@@ -25,7 +25,7 @@ function App () {
                     <Route path="/blog/:id" element={<BlogPost />} />
         
                     {/* Route to Profile component */}
-                    <Route path="/Profile" element={<Profile />}>
+                    <Route path="/profile" element={<Profile />}>
                         <Route path="ProfileDetails" element= {<ProfileDetails />} />
                         <Route path="ProfileSettings" element = { <ProfileSettings />} />
                     </Route>
