@@ -22,7 +22,7 @@ test('adds a new todo', ()=>{
 
 test('toggles todo completion status', ()=>{
     render(<TodoList />);
-    const toggleButton = screen.getAllByText('completed')[0];
+    const toggleButton = screen.getAllByText('Completed')[0];
 
     fireEvent.click(toggleButton);
 
