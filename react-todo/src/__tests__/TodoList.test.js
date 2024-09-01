@@ -22,11 +22,19 @@ test('adds a new todo', ()=>{
 
 test('toggles todo completion status', ()=>{
     render(<TodoList />);
-    const toggleButton = screen.getAllByText('Completed')[0];
+    const todoItem = screen.getByText('Learn React');
+    expect(todoItem).not.toHaveStyle('text-decoration: line-through');
 
+    const toggleButton = screen.getAllByText('Completed')[0];
     fireEvent.click(toggleButton);
 
     expect(screen.getByText('Learn React')).toHaveStyle('text-decoration: line-through');
+
+     // Click the toggle button again to mark the todo as not completed
+     fireEvent.click(toggleButton);
+    
+     // Verify the todo is not completed
+     expect(todoItem).not.toHaveStyle('text-decoration: line-through');
 })
 
 test('deletes a todo', () => {
