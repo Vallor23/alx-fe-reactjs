@@ -3,13 +3,9 @@ import * as Yup from 'yup';
 import './RegistrationForm.css';
 
 const validationSchema = Yup.object({
-    username:Yup.string()
-        .min(4, 'Username must be at least 4 characters long')
-        .required('Username is required'),
-    email:Yup.string().email('Invalide email address').required('Email is required'),
-    password: Yup.string()
-        .min(8, 'Password must be at least 8 characters long')
-        .required('Password is required')
+    username:Yup.string().required('Username is required').min(4, 'Username must be at least 4 characters long'),
+    email:Yup.string().required('Email is required').email('Invalide email address'),
+    password: Yup.string().required('Password is required').min(8, 'Password must be at least 8 characters long')
 });
 
 const FormikForm = () => (
