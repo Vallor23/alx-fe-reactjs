@@ -1,9 +1,9 @@
-
+import UserProfile from "./components/UserProfile";
 
 function App() {
   return (
-    <div>Hello, this is my first time using Tailwind css</div>
+     <UserProfile />
   )
 }
 
-export default App
+export default App;
