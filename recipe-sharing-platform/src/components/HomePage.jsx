@@ -30,12 +30,10 @@ const Homepage = () => {
         {recipes.length > 0 ? 
         (recipes.map((recipe) => (
             // recipe-card
-            <div key={recipe.id} className='bg-white text-center p-4 rounded shadow border-solid border border-black'>
+            <div key={recipe.id} className='bg-white text-center p-4 rounded shadow-lg transform hover:shadow-2xl hover:scale-105 hover:rotate-1 hover:bg-gray-100 duration-300 '>
                 <h2 className='text-xl tracking-wide font-bold mt-2'>{recipe.title}</h2>
                 <p className='mt-2'>{recipe.summary}</p>
-                <div className='flex justify-center'>
-                    <img src={recipe.image} alt={recipe.tittle} className='mt-2'/>
-                </div>
+                <img src={recipe.image} alt={recipe.tittle} className='mt-4 mx-auto'/>
             </div>
         ))
         ) : (
