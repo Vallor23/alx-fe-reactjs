@@ -10,5 +10,35 @@
     "title": "Chicken Tikka Masala",
     "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
     "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": 3,
+    "title": "Sushi",
+    "summary": "Traditional Japanese dish featuring vinegared rice and raw or cooked seafood.",
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": 4,
+    "title": "Beef Stroganoff",
+    "summary": "A Russian-inspired dish of sautéed beef served in a sauce with sour cream.",
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": 5,
+    "title": "Pad Thai",
+    "summary": "A popular Thai dish with stir-fried rice noodles, eggs, vegetables, and tofu or meat.",
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": 6,
+    "title": "Margherita Pizza",
+    "summary": "A simple pizza topped with tomatoes, fresh mozzarella, and basil.",
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": 7,
+    "title": "Falafel",
+    "summary": "A Middle Eastern dish made of ground chickpeas or fava beans, deep-fried into balls.",
+    "image": "https://via.placeholder.com/150"
   }
 ]
