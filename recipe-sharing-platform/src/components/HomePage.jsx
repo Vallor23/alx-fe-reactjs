@@ -26,7 +26,7 @@ const Homepage = () => {
 
   return (
     <div className='container mx-auto'>
-        <div className=' grid gap-4 sm:gap-6 lg:gap-8  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-between'>
+        <div className=' grid gap-4 sm:gap-6 md:gap-8  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-between'>
         {recipes.length > 0 ? 
         (recipes.map((recipe) => (
             // recipe-card
