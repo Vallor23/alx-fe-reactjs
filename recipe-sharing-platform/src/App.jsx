@@ -1,8 +1,8 @@
-import React from 'react'
+import Homepage from './components/Homepage'
 
 function App() {
   return (
-    <div className='text-blue-300'>App</div>
+    <Homepage />
   )
 }
 
