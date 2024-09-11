@@ -6,11 +6,12 @@ const Homepage = () => {
     useEffect( () => {
         const fetchRecipes = async () => {
             try {
-                const response = await fetch('/public/data.json');
+                const response = await fetch('/src/data.json');
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
                 const data = await response.json();
+                console.log(data)
                 setRecipes(data);
             } catch (error) {
                 console.error('Fetch Error:', error)
