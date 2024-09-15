@@ -7,7 +7,7 @@ const AddRecipeForm = (onAddRecipe) => {
     const [steps, setSteps] = useState('');
     const [image, setImage] = useState('');
 
-    const [errors,setErrors]= useState();
+    const [errors,setErrors]= useState({});
 
     // Validation logic
     const validate = () =>{
@@ -38,11 +38,7 @@ const AddRecipeForm = (onAddRecipe) => {
             validationErrors.image = "Image URL is required.";
         }
 
-        // If there are errors, set the error messages in the state and return
-        if (Object.keys(validationErrors).length > 0) {
-            setErrors(validationErrors);
-            return;
-        }
+         return validationErrors;
     };
 
     const handleSubmit = (e) => {
@@ -55,8 +51,7 @@ const AddRecipeForm = (onAddRecipe) => {
         if (Object.keys(validationErrors).length > 0) {
             setErrors(validationErrors);
             return;
-        }
-         
+        } 
         // create a new recipe object
         const newRecipe = {
             id: Date.now(),
@@ -80,58 +75,58 @@ const AddRecipeForm = (onAddRecipe) => {
     
   return (
 
-    <form onSubmit={handleSubmit}>
-        <h2 className="">Add a New Recipe</h2>
-        <div>
-            <label className="">Title</label>
+    <form onSubmit={handleSubmit} className="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-md">
+        <h2 className="text-2xl font-bold mb-6 text-center ">Add a New Recipe</h2>
+        <div className="mb-4">
+            <label className="block text-gray-700 font-bold mb-2">Title</label>
             <input
                 type="text"
-                name='title'
+                className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 value={title}
                 onChange={(e)=>setTitle(e.target.value)}
             />
-            {errors.title && <p className="text-red-500 text-sm">{errors.title}</p>}
+            {errors.title && <p className="text-red-500 text-sm mt-1">{errors.title}</p>}
         </div>
-        <div>
-            <label className="">Summary</label>
+        <div className="mb-4">
+            <label className="block text-gray-700 font-bold mb-2">Summary</label>
             <input
                 type="text"
-                name='summary'
+                className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 value={summary}
                 onChange={(e)=>setSummary(e.target.value)}
             />
-            {errors.summary && <p className="text-red-500 text-sm">{errors.summary}</p>}
+            {errors.summary && <p className="text-red-500 text-sm mt-1">{errors.summary}</p>}
         </div>
-        <div className="">
-        <label className="">Ingredients (comma-separated)</label>
+        <div className="mb-4">
+        <label className="block text-gray-700 font-bold mb-2">Ingredients (comma-separated)</label>
         <textarea
-            name="ingredients"
+            className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             value={ingredients}
             id=""
             onChange={(e)=>setIngredients(e.target.value)}
         />
         {errors.ingredients && <p className="text-red-500 text-sm">{errors.ingredients}</p>}
         </div>
-        <div className="">
-            <label className="">steps (separate by periods)</label>
+        <div className="mb-4">
+            <label className="block text-gray-700 font-bold mb-2">steps (separate by periods)</label>
             <textarea
-                name="steps"
+                className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 value={steps}
                 onChange={(e)=>setSteps(e.target.value)}
             />
             {errors.steps && <p className="text-red-500 text-sm">{errors.steps}</p>}
         </div>
-         <div className="">
-            <label className="">Image URL</label>
+         <div className="mb-4">
+            <label className="block text-gray-700 font-bold mb-2">Image URL</label>
             <input
                 type="text"
-                name='imageurl'
+                className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 value={image}
                 onChange={(e)=>setImage(e.target.value)}
             />
             {errors.image && <p className="text-red-500 text-sm">{errors.image}</p>}
         </div>
-        <button type='submit'>Submit</button>
+        <button type='submit' className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition duration-300">Submit</button>
     </form>
   )
 }
