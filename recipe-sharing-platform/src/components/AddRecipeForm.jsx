@@ -4,7 +4,7 @@ const AddRecipeForm = (onAddRecipe) => {
     const [title, setTitle] = useState('');
     const [summary, setSummary] = useState('');
     const [ingredients, setIngredients] = useState('');
-    const [instructions, setInstructions] = useState('');
+    const [steps, setSteps] = useState('');
     const [image, setImage] = useState('');
 
     const [errors,setErrors]= useState();
@@ -32,8 +32,8 @@ const AddRecipeForm = (onAddRecipe) => {
              }
          }
  
-         if (!instructions.trim()) {
-             validationErrors.instructions = "Instructions are required.";
+         if (!steps.trim()) {
+             validationErrors.steps = "steps are required.";
          }
  
          if (!image.trim()) {
@@ -52,7 +52,7 @@ const AddRecipeForm = (onAddRecipe) => {
             title,
             summary,
             ingredients:ingredients.split(',').map(ing =>ing.trim()),//convert to array
-            instructions:instructions.split(',').map(ing =>ing.trim()),
+            steps:steps.split(',').map(ing =>ing.trim()),
             image,
         };
         
@@ -63,7 +63,7 @@ const AddRecipeForm = (onAddRecipe) => {
         setTitle('');
         setSummary('');
         setIngredients('');
-        setInstructions('');
+        setSteps('');
         setImage('');
     }
     
@@ -102,13 +102,13 @@ const AddRecipeForm = (onAddRecipe) => {
         {errors.ingredients && <p className="text-red-500 text-sm">{errors.ingredients}</p>}
         </div>
         <div className="">
-            <label className="">Instructions (separate by periods)</label>
+            <label className="">steps (separate by periods)</label>
             <textarea
-                name="instructions"
-                value={instructions}
-                onChange={(e)=>setInstructions(e.target.value)}
+                name="steps"
+                value={steps}
+                onChange={(e)=>setSteps(e.target.value)}
             />
-            {errors.instructions && <p className="text-red-500 text-sm">{errors.instructions}</p>}
+            {errors.steps && <p className="text-red-500 text-sm">{errors.steps}</p>}
         </div>
          <div className="">
             <label className="">Image URL</label>
