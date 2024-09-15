@@ -9,43 +9,54 @@ const AddRecipeForm = (onAddRecipe) => {
 
     const [errors,setErrors]= useState();
 
+    // Validation logic
+    const validate = () =>{
+        let validationErrors = {};
+
+        if (!title.trim()) {
+            validationErrors.title = "Title is required.";
+        }
+
+        if (!summary.trim()) {
+            validationErrors.summary = "Summary is required.";
+        }
+
+        if (!ingredients.trim()) {
+            validationErrors.ingredients = "Ingredients are required.";
+        } else {
+            const ingredientsArray = ingredients.split(',').map(ing => ing.trim());
+            if (ingredientsArray.length < 2) {
+                validationErrors.ingredients = "Please enter at least two ingredients.";
+            }
+        }
+
+        if (!steps.trim()) {
+            validationErrors.steps = "steps are required.";
+        }
+
+        if (!image.trim()) {
+            validationErrors.image = "Image URL is required.";
+        }
+
+        // If there are errors, set the error messages in the state and return
+        if (Object.keys(validationErrors).length > 0) {
+            setErrors(validationErrors);
+            return;
+        }
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
-         // Validation logic
-         let validationErrors = {};
+        // Validate the form using the validate function
+        const validationErrors = validate();
 
-         if (!title.trim()) {
-             validationErrors.title = "Title is required.";
-         }
- 
-         if (!summary.trim()) {
-             validationErrors.summary = "Summary is required.";
-         }
- 
-         if (!ingredients.trim()) {
-             validationErrors.ingredients = "Ingredients are required.";
-         } else {
-             const ingredientsArray = ingredients.split(',').map(ing => ing.trim());
-             if (ingredientsArray.length < 2) {
-                 validationErrors.ingredients = "Please enter at least two ingredients.";
-             }
-         }
- 
-         if (!steps.trim()) {
-             validationErrors.steps = "steps are required.";
-         }
- 
-         if (!image.trim()) {
-             validationErrors.image = "Image URL is required.";
-         }
- 
-         // If there are errors, set the error messages in the state and return
-         if (Object.keys(validationErrors).length > 0) {
-             setErrors(validationErrors);
-             return;
-         }
-
+        // If there are errors, set them in the state and return
+        if (Object.keys(validationErrors).length > 0) {
+            setErrors(validationErrors);
+            return;
+        }
+         
         // create a new recipe object
         const newRecipe = {
             id: Date.now(),
