@@ -32,7 +32,7 @@ const Homepage = () => {
 
     return (
     <div className='container mx-auto'>
-        <h1 className="text-4xl md:text-5xl font-bold text-center text-gray-800 mt-8 mb-12">Recipe List</h1>
+        <h1 className="text-4 xl md:text-5xl font-bold text-center text-gray-800 mt-8 mb-12">Recipe List</h1>
         <AddRecipeForm onAddRecipe={handleAddRecipe} />
 
         <div className=' grid gap-4 sm:gap-6 md:gap-8  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-between'>
