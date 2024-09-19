@@ -131,4 +131,8 @@ const AddRecipeForm = (onAddRecipe) => {
   )
 }
 
+<<<<<<< HEAD
 export default AddRecipeForm;
+=======
+export default AddRecipeForm;
+>>>>>>> 338daace24636dcdd6634262c35f0854bcf0eeb3
