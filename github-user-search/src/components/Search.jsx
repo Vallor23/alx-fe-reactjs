@@ -5,7 +5,7 @@ const Search = () => {
 const [username,setUsername] = useState('');
 
 const [userData, setUserData] = useState([]);
-const [isLoading, setIsLoading] = useState(true);
+// const [isLoading, setIsLoading] = useState(true);
 const [error, setError] = useState(null);
 
     const getUserData = async(username) => {
@@ -15,11 +15,11 @@ const [error, setError] = useState(null);
         } catch (error) {
             setError(error)
         }
-        setIsLoading(false)
+        // setIsLoading(false)
     }
     // getUserData();
 
-if(isLoading) return <p>Loading...</p>;
+// if(isLoading) return <p>Loading...</p>;
 if(error) return <p>Looks like we cant find the user</p>;
 
 
@@ -51,28 +51,27 @@ const handleSubmit = (e) => {
                 {/* onClick={} */}
             </div>
         </form>
+        {username &&
         <div>
             <div className='flex  mt-6 gap-4'>
                 <img src={userData.avatar_url} alt="avatar"  className='rounded-full w-28 h-28'/>
                 <h1 className='text-xl'>{userData.name}</h1>
+                <p>Login: <span>{userData.login}</span></p>
             </div>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nisi officiis pariatur quos expedita, voluptas cum.</p>
             <div className='flex gap-8'>
                 <div className='flex flex-col'>
-                   <p>Repos</p>
-                   <img src={userData.repos_url} alt="avatar"  className='rounded-full w-28 h-28'/>
-                   <p>{userData.repos_url}</p>
                 </div>
                 <div className='flex flex-col'>
                    <p>Followers</p>
-                   <p>{userData.followers_url}</p>
+                   <p>Link to Github profile:<a href={userData.url}>{userData.url}</a></p>
                 </div>
                 <div className='flex flex-col'>
-                   <p>Following</p>
-                   <p>{userData.following_url}</p>
+                   {/* <p>Following</p> */}
+                   {/* <p>{userData.following_url}</p> */}
                 </div>
             </div>
-        </div>
+        </div>}
     </div>
   )
 }
