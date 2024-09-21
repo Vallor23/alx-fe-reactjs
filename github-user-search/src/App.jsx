@@ -3,7 +3,7 @@ import { FaLink } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 
-import SearchComponent from './components/SearchComponent'
+import SearchComponent from './components/Search'
 import fetchUserData from "./services/githubService";
 import { useState } from "react";
 
