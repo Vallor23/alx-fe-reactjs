@@ -80,8 +80,8 @@ const handleSubmit = (e) => {
       (<div key={user.id} className='flex-col text-white gap-6 p-4 bg-LightDarkBlue rounded-lg shadow-lg'>
         <div className='flex gap-4 border p-6'>
             <img src={user.avatar_url} alt="avatar"  className='rounded-full w-20 h-20'/>
-            <h1 className='text-xl font-semibold'>{user.name}</h1>
-            {/* <p>Login: <span>{userData.login}</span></p> */}
+            <h1 className='text-xl font-semibold'>{user.login}</h1>
+            <p>{user.html_url}</p>
         </div>
 
         <div className=''>
