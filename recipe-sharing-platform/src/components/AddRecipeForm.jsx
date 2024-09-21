@@ -44,7 +44,8 @@ const AddRecipeForm = (onAddRecipe) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // Validate the form using the validate function
+        // Validate the form using the validate funct
+    ion
         const validationErrors = validate();
 
         // If there are errors, set them in the state and return
