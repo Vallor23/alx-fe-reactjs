@@ -2,8 +2,8 @@ import SearchComponent from './components/Search'
 
 function App() {
   return (
-    <div className=' container mt-6 bg-DarkBlue font-roboto'>
-      <h1 className='text-3xl text-center font-bold text-white mt-12'>GitHub User Search</h1>
+    <div className='container mx-auto mt-6  bg-darkBlue font-roboto p-4'>
+      <h1 className='text-3xl text-center font-bold text-darkBlue mt-12'>GitHub User Search</h1>
       <SearchComponent />
     </div>
   )
