@@ -10,15 +10,15 @@ import { FaTwitter } from "react-icons/fa";
 const SearchComponent = () => {
     const [username,setUsername] = useState('');
     const [location,setLocation]=useState('');
-    const [repos,setRepos] = useState('');
+    const [minRepos,setMinRepos] = useState('');
 
     const [userData, setUserData] = useState([]);
     const [isLoading, setIsLoading] = useState(null);
     const [error, setError] = useState(null);
 
-    const getUserData = async({ username, location, repos }) => {
+    const getUserData = async({ username, location, minRepos }) => {
         try {
-            const data = await fetchUserData({ username, location, repos });
+            const data = await fetchUserData({ username, location, minRepos });
             setUserData(data);
         } catch (error) {
             setError(error)
@@ -31,7 +31,7 @@ const SearchComponent = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setIsLoading(true);
-        getUserData({ username, location, repos })
+        getUserData({ username, location, minRepos })
     }
 
     if(isLoading) return <p>Loading...</p>;
@@ -63,8 +63,8 @@ const SearchComponent = () => {
                     <label className="block text-gray-200 text-sm font-semibold mb-2">Minimum Repositories:</label>
                     <input
                     type="number"
-                    value={repos}
-                    onChange={(e) => setRepos(e.target.value)}
+                    value={minRepos}
+                    onChange={(e) => setMinRepos(e.target.value)}
                     className="mt-1 p-2 border border-gray-300 rounded-md w-full"
                     />
                 </div>
